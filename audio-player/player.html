@@ -1,209 +1,339 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Audio Player</title>
     <style>
-      /* Add CSS styling here to create a more attractive audio player */
-      #audio-player {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #f9f9f9;
-        border-radius: 5px;
-        box-shadow: 0px 3px 5px #ccc;
-        padding: 20px;
-        max-width: 500px;
-        margin: 0 auto;
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
       }
 
-      #audio-player img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
+      #player {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+
+      #track-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      #track-artist {
+        font-size: 16px;
+        color: #666;
         margin-bottom: 20px;
       }
 
       #track-list {
         list-style: none;
-        padding: 0;
         margin: 0;
+        padding: 0;
       }
 
       #track-list li {
-        margin-bottom: 10px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 5px;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
       }
 
       #track-list li:last-child {
         border-bottom: none;
-        padding-bottom: 0;
       }
 
       #track-list li a {
-        color: #333;
         text-decoration: none;
-        transition: all 0.2s ease-in-out;
+        color: #333;
+        font-weight: bold;
       }
 
       #track-list li a:hover {
-        color: #06c;
-        text-decoration: underline;
+        color: #666;
+      }
+
+      #track-list li span {
+        font-size: 14px;
+        color: #999;
+        margin-left: 10px;
+      }
+
+      #buy-links {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      #buy-links a {
+        display: inline-block;
+        background-color: #666;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-right: 10px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      #buy-links a:hover {
+        background-color: #333;
       }
 
       #progress-bar {
-        width: 100%;
-        height: 10px;
-        background-color: #ddd;
+        height: 4px;
+        background-color: #eee;
+        margin-bottom: 20px;
         position: relative;
-        margin-top: 20px;
       }
 
       #progress-bar span {
-        display: block;
         height: 100%;
-        background-color: #06c;
+        background-color: #666;
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: 5px;
+        width: 0%;
+        transition: width 0.2s ease-in-out;
       }
 
       #controls {
         display: flex;
-        justify-content: center;
         align-items: center;
-        margin-top: 20px;
+        justify-content: center;
       }
 
       #play-pause-btn {
         border: none;
         background-color: transparent;
         cursor: pointer;
-        transition: all 0.2s ease-in-out;
+        outline: none;
+        margin-right: 10px;
       }
 
-      #play-pause-btn:hover {
-        transform: scale(1.1);
-      }
-
-      #play-pause-btn img {
-        width: 50px;
-        height: 50px;
-      }
-
-      #track-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      #track-title {
-        font-size: 24px;
-        margin-bottom: 10px;
-      }
-
-      #track-artist {
-        font-size: 16px;
-        color: #999;
+      #play-pause-img {
+        width: 40px;
+        height: 40px;
       }
     </style>
   </head>
   <body>
-    <div id="audio-player">
-      <img src="/Users/flowers15/Desktop/music for a fashion  brands/assets1.png" alt="Album Art">
-      <div id="track-info">
-        <div id="track-title">Twitter</div>
-        <div id="track-artist">Flowers 15</div>
-      </div>
-      <audio id="audio" src="pecker.wav"></audio>
+    <div id="player">
+      <audio id="audio"></audio>
+      <h1 id="track-title">Track Title</h1>
+      <h2 id="track-artist">Artist Name</h2>
       <ul id="track-list">
-        <li><a href="#" data-src="audio-file.mp3">pecker</a><span>3:45</span></li>
-        <li><a href="#" data-src="audio-file-2.mp3">Track 2</a    ><span>4:20</span></li>
-    <li><a href="#" data-src="audio-file-3.mp3">Track 3</a><span>2:55</span></li>
-  </ul>
-  <div id="progress-bar">
-    <span></span>
-  </div>
-  <div id="controls">
-    <button id="play-pause-btn"><img id="play-pause-img" src="play.png" alt="Play"></button>
-  </div>
+        <li><a href="#" data-src="audio-file-1.mp3">Track 1</a><span>3:45</span></li>
+        <li><li><a href="#" data-src="audio-file-2.mp3">Track 2</a><span>4:12</span></li>
+<li><a href="#" data-src="audio-file-3.mp3">Track 3</a><span>2:58</span></li>
+<li><a href="#" data-src="audio-file-4.mp3">Track 4</a><span>5:21</span></li>
+<li><a href="#" data-src="audio-file-5.mp3">Track 5</a><span>3:10</span></li>
+</ul>
+<div id="buy-links">
+<a href="#">Buy on iTunes</a>
+<a href="#">Buy on Amazon</a>
+</div>
+<div id="progress-bar">
+<span></span>
+</div>
+<div id="controls">
+<button id="play-pause-btn">
+<img id="play-pause-img" src="https://img.icons8.com/material-outlined/24/000000/play--v1.png" alt="Play Button">
+</button>
+<span id="current-time">0:00</span>
+<input type="range" id="seek-bar" min="0" step="1" value="0">
+<span id="duration">0:00</span>
+<button id="mute-btn">
+<img id="mute-img" src="https://img.icons8.com/material-outlined/24/000000/mute.png" alt="Mute Button">
+</button>
+<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+</div>
 </div>
 <script>
-  // JavaScript code for controlling the audio player
-  const audio = document.getElementById('audio');
-  const playPauseBtn = document.getElementById('play-pause-btn');
-  const playPauseImg = document.getElementById('play-pause-img');
-  const trackTitle = document.getElementById('track-title');
-  const trackArtist = document.getElementById('track-artist');
-  const trackList = document.getElementById('track-list');
-  const progressBar = document.getElementById('progress-bar');
-  const progressBarFill = progressBar.querySelector('span');
+var audio = document.getElementById("audio");
+var playPauseBtn = document.getElementById("play-pause-btn");
+var playPauseImg = document.getElementById("play-pause-img");
+var muteBtn = document.getElementById("mute-btn");
+var muteImg = document.getElementById("mute-img");
+var seekBar = document.getElementById("seek-bar");
+var volumeBar = document.getElementById("volume-bar");
+var progressBar = document.getElementById("progress-bar");
+var progressBarFill = document.querySelector("#progress-bar span");
+var currentTime = document.getElementById("current-time");
+var duration = document.getElementById("duration");
+var trackTitle = document.getElementById("track-title");
+var trackArtist = document.getElementById("track-artist");
+var trackListItems = document.querySelectorAll("#track-list li");
+var currentTrackIndex = 0;
+var tracks = [    {      title: "Track 1",      artist: "Artist Name",      src: "audio-file-1.mp3",      duration: "3:45",      buyLinks: [        {          text: "Buy on iTunes",          url: "#"        },        {          text: "Buy on Amazon",          url: "#"        }      ]
+  },
+  {
+    title: "Track 2",
+    artist: "Artist Name",
+    src: "audio-file-2.mp3",
+    duration: "4:12",
+    buyLinks: [
+      {
+        text: "Buy on iTunes",
+        url: "#"
+      },
+      {
+        text: "Buy on Amazon",
+        url: "#"
+      }
+    ]
+  },
+  {
+    title: "Track 3",
+    artist: "Artist Name",
+    src: "audio-file-3.mp3",
+    duration: "2:58",
+    buyLinks: [
+      {
+        text: "Buy on iTunes",
+        url:
+        "#"
+        },
+        {
+        text: "Buy on Amazon",
+        url: "#"
+        }
+        ]
+        },
+        {
+        title: "Track 4",
+        artist: "Artist Name",
+        src: "audio-file-4.mp3",
+        duration: "5:21",
+        buyLinks: [
+        {
+        text: "Buy on iTunes",
+        url: "#"
+        },
+        {
+        text: "Buy on Amazon",
+        url: "#"
+        }
+        ]
+        },
+        {
+        title: "Track 5",
+        artist: "Artist Name",
+        src: "audio-file-5.mp3",
+        duration: "3:10",
+        buyLinks: [
+        {
+        text: "Buy on iTunes",
+        url: "#"
+        },
+        {
+        text: "Buy on Amazon",
+        url: "#"
+        }
+        ]
+        }
+        ];
+        function formatTime(time) {
+  var minutes = Math.floor(time / 60);
+  var seconds = Math.floor(time % 60);
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  return minutes + ":" + seconds;
+}
 
-  let currentTrack = 0;
-  let isPlaying = false;
-  let progressInterval;
+function updateTrackInfo() {
+  var currentTrack = tracks[currentTrackIndex];
+  trackTitle.textContent = currentTrack.title;
+  trackArtist.textContent = currentTrack.artist;
+  duration.textContent = currentTrack.duration;
+  buyLinks.innerHTML = "";
+  for (var i = 0; i < currentTrack.buyLinks.length; i++) {
+    var link = document.createElement("a");
+    link.textContent = currentTrack.buyLinks[i].text;
+    link.href = currentTrack.buyLinks[i].url;
+    buyLinks.appendChild(link);
+  }
+}
 
-  function playTrack(trackIndex) {
-    const track = trackList.children[trackIndex].querySelector('a');
-    const trackSrc = track.getAttribute('data-src');
-    const trackTitleText = track.textContent;
-    const trackArtistText = 'Artist Name'; // Change this to the actual artist name
+function init() {
+  updateTrackInfo();
+  audio.src = tracks[currentTrackIndex].src;
+  audio.addEventListener("timeupdate", function() {
+    var durationValue = this.duration || 0;
+    seekBar.value = (this.currentTime / durationValue) * 100;
+    progressBarFill.style.width = seekBar.value + "%";
+    currentTime.textContent = formatTime(this.currentTime);
+  });
 
-    audio.src = trackSrc;
-    trackTitle.textContent = trackTitleText;
-    trackArtist.textContent = trackArtistText;
+  audio.addEventListener("ended", function() {
+    currentTrackIndex++;
+    if (currentTrackIndex === tracks.length) {
+      currentTrackIndex = 0;
+    }
+    updateTrackInfo();
+    audio.src = tracks[currentTrackIndex].src;
     audio.play();
-    isPlaying = true;
-    playPauseImg.src = 'pause.png';
-    startProgressInterval();
-    currentTrack = trackIndex;
-  }
+  });
 
-  function togglePlayPause() {
-    if (isPlaying) {
-      audio.pause();
-      isPlaying = false;
-      playPauseImg.src = 'play.png';
-      clearInterval(progressInterval);
-    } else {
+  playPauseBtn.addEventListener("click", function() {
+    if (audio.paused || audio.ended) {
       audio.play();
-      isPlaying = true;
-      playPauseImg.src = 'pause.png';
-      startProgressInterval();
-    }
-  }
-
-  function startProgressInterval() {
-    progressInterval = setInterval(() => {
-      const progress = audio.currentTime / audio.duration;
-      progressBarFill.style.width = `${progress * 100}%`;
-    }, 100);
-  }
-
-  trackList.addEventListener('click', e => {
-    if (e.target.tagName === 'A') {
-      e.preventDefault();
-      const trackIndex = Array.from(trackList.children).indexOf(e.target.parentElement);
-      playTrack(trackIndex);
-    }
-  });
-
-  playPauseBtn.addEventListener('click', togglePlayPause);
-
-  audio.addEventListener('ended', () => {
-    if (currentTrack < trackList.children.length - 1) {
-      playTrack(currentTrack + 1);
+      playPauseImg.src = "https://img.icons8.com/material-outlined/24/000000/pause--v1.png";
     } else {
-      audio.currentTime = 0;
-      togglePlayPause();
-      progressBarFill.style.width = '0%';
+      audio.pause();
+      playPauseImg.src = "https://img.icons8.com/material-outlined/24/000000/play--v1.png";
     }
   });
+
+  muteBtn.addEventListener("click", function() {
+    if (audio.muted) {
+      audio.muted = false;
+      muteImg.src = "https://img.icons8.com/material-outlined/24/000000/mute.png";
+      volumeBar.value = audio.volume;
+    } else {
+      audio.muted = true;
+      muteImg.src = "https://img.icons8.com/material-outlined/24/000000/speaker.png";
+      volumeBar.value = 0;
+    }
+  });
+
+  seekBar.addEventListener("input", function() {
+    var durationValue = audio.duration || 0;
+    var seekTo = (durationValue * (seekBar.value / 100));
+    audio.currentTime = seekTo;
+    progressBarFill.style.width = seekBar.value + "%";
+  });
+
+  volumeBar.addEventListener("input", function() {
+    audio.volume = volumeBar.value
+});
+prevTrackBtn.addEventListener("click", function() {
+  currentTrackIndex--;
+  if (currentTrackIndex < 0) {
+    currentTrackIndex = tracks.length - 1;
+  }
+  updateTrackInfo();
+  audio.src = tracks[currentTrackIndex].src;
+  audio.play();
+});
+
+nextTrackBtn.addEventListener("click", function() {
+  currentTrackIndex++;
+  if (currentTrackIndex === tracks.length) {
+    currentTrackIndex = 0;
+  }
+  updateTrackInfo();
+  audio.src = tracks[currentTrackIndex].src;
+  audio.play();
+});
+}
+
+init();
 </script>
-</body>
+  </body>
 </html>
