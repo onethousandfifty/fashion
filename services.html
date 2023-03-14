@@ -1,435 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<!-- utf-8 works for most cases -->
-<meta name="viewport" content="width=device-width">
-<!-- Forcing initial-scale shouldn't be necessary -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- Use the latest (edge) version of IE rendering engine -->
-<title>EmailTemplate-Hybrid</title>
-<!-- The title tag shows in email notifications, like Android 4.4. -->
+  <head>
+    <meta charset="UTF-8">
+    <title>What We Offer - Music Production Company</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
-<!-- Please use an inliner tool to convert all CSS to inline as inpage or external CSS is removed by email clients -->
-<!-- important in CSS is used to prevent the styles of currently inline CSS from overriding the ones mentioned in media queries when corresponding screen sizes are encountered -->
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
 
-<!-- CSS Reset -->
-<style type="text/css">
-/* What it does: Remove spaces around the email design added by some email clients. */
-      /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-html, body {
-	margin: 0 !important;
-	padding: 0 !important;
-	height: 100% !important;
-	width: 100% !important;
-}
-/* What it does: Stops email clients resizing small text. */
-* {
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
-/* What it does: Forces Outlook.com to display emails full width. */
-.ExternalClass {
-	width: 100%;
-}
-/* What is does: Centers email on Android 4.4 */
-div[style*="margin: 16px 0"] {
-	margin: 0 !important;
-}
-/* What it does: Stops Outlook from adding extra spacing to tables. */
-table, td {
-	mso-table-lspace: 0pt !important;
-	mso-table-rspace: 0pt !important;
-}
-/* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
-table {
-	border-spacing: 0 !important;
-	border-collapse: collapse !important;
-	table-layout: fixed !important;
-	margin: 0 auto !important;
-}
-table table table {
-	table-layout: auto;
-}
-/* What it does: Uses a better rendering method when resizing images in IE. */
-img {
-	-ms-interpolation-mode: bicubic;
-}
-/* What it does: Overrides styles added when Yahoo's auto-senses a link. */
-.yshortcuts a {
-	border-bottom: none !important;
-}
-/* What it does: Another work-around for iOS meddling in triggered links. */
-a[x-apple-data-detectors] {
-	color: inherit !important;
-}
-</style>
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px;
+      }
 
-<!-- Progressive Enhancements -->
-<style type="text/css">
-/* What it does: Hover styles for buttons */
-.button-td, .button-a {
-	transition: all 100ms ease-in;
-}
-.button-td:hover, .button-a:hover {
-	background: #555555 !important;
-	border-color: #555555 !important;
-}
+      h1 {
+        font-size: 36px;
+        margin-top: 0;
+      }
 
-/* Media Queries */
-@media screen and (max-width: 480px) {
-/* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
-.fluid, .fluid-centered {
-	width: 100% !important;
-	max-width: 100% !important;
-	height: auto !important;
-	margin-left: auto !important;
-	margin-right: auto !important;
-}
-/* And center justify these ones. */
-.fluid-centered {
-	margin-left: auto !important;
-	margin-right: auto !important;
-}
-/* What it does: Forces table cells into full-width rows. */
-.stack-column, .stack-column-center {
-	display: block !important;
-	width: 100% !important;
-	max-width: 100% !important;
-	direction: ltr !important;
-}
-/* And center justify these ones. */
-.stack-column-center {
-	text-align: center !important;
-}
-/* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
-.center-on-narrow {
-	text-align: center !important;
-	display: block !important;
-	margin-left: auto !important;
-	margin-right: auto !important;
-	float: none !important;
-}
-table.center-on-narrow {
-	display: inline-block !important;
-}
-}
-</style>
-</head>
-<body width="100%" bgcolor="#e0e0e0" style="margin: 0;" yahoo="yahoo">
-<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#e0e0e0" style="border-collapse:collapse;">
-  <tr>
-    <td><center style="width: 100%;">
-        
-        <!-- Visually Hidden Preheader Text : BEGIN -->
-        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;"> (Optional) This text will appear in the inbox preview, but not the email body. </div>
-        <!-- Visually Hidden Preheader Text : END -->
-        
-        <div style="max-width: 680px;"> 
-          <!--[if (gte mso 9)|(IE)]>
-            <table cellspacing="0" cellpadding="0" border="0" width="680" align="center">
-            <tr>
-            <td>
-            <![endif]--> 
-          
-          <!-- Email Header : BEGIN -->          <!-- Email Header : END --> 
-          
-          <!-- Email Body : BEGIN -->
-          <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" width="100%" style="max-width: 680px;">
-            
-            <!-- Hero Image, Flush : BEGIN -->            <!-- Hero Image, Flush : END --> 
-            
-            <!-- 1 Column Text : BEGIN -->
-            <tr>
-              <td><table cellspacing="0" cellpadding="0" border="0" width="100%">
-                  <tr>
-                    <td style="padding: 40px; text-align: center; font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555;"> As a music production company that specializes in creating music for fashion shows and walkthroughs, we take pride in offering a wide range of services to our clients. Here are some of the key items about our services
-                      <br>
-                      
-                      <!-- Button : Begin -->
-                      
-                      <table cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto">
-</table>
-                      
-                      <!-- Button : END --></td>
-                  </tr>
-                </table></td>
-            </tr>
-            <!-- 1 Column Text : BEGIN --> 
-            
-            <!-- Background Image with Text : BEGIN -->
-          </table>
-          <h1>WHAT WE OFFER</h1>
-          <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" width="100%" style="max-width: 680px;">
-            <tr>
-              <td background="images/Image_680x230.png" bgcolor="#222222" valign="middle" style="text-align: center; background-position: center center !important; background-size: cover !important;"><!--[if gte mso 9]>
-                        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:680px;height:175px; background-position: center center !important;">
-                        <v:fill type="tile" src="assets/Hybrid/Image_680x230.png" color="#222222" />
-                        <v:textbox inset="0,0,0,0">
-                        <![endif]-->
-                
-                <!--[if gte mso 9]>
-                        </v:textbox>
-                        </v:rect>
-                        <![endif]--></td>
-            </tr>
-            <!-- Background Image with Text : END --> 
-            
-            <!-- Two Even Columns : BEGIN -->
-            <tr>
-              <td bgcolor="#ffffff" align="center" height="100%" valign="top" width="100%"><!--[if mso]>
-                        <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
-                        <tr>
-                        <td align="center" valign="top" width="660">
-                        <![endif]-->
-                
-                <!--[if mso]>
-                        </td>
-                        </tr>
-                        </table>
-                        <![endif]--></td>
-            </tr>
-            <!-- Two Even Columns : END --> 
-            
-            <!-- Three Even Columns : BEGIN -->
-            <tr>
-              <td bgcolor="#ffffff" align="center" height="100%" valign="top" width="100%" style="padding: 10px 0;"><!--[if mso]>
-                        <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
-                        <tr>
-                        <td align="center" valign="top" width="660">
-                        <![endif]-->
-                
-                <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:660px;">
-  </table>
-                
-                <!--[if mso]>
-                        </td>
-                        </tr>
-                        </table>
-                        <![endif]--></td>
-            </tr>
-            <!-- Three Even Columns : END --> 
-            
-            <!-- Thumbnail Left, Text Right : BEGIN -->            <!-- Thumbnail Left, Text Right : END --> 
-            
-            <!-- Thumbnail Right, Text Left : BEGIN -->
-            <tr>
-              <td dir="rtl" bgcolor="#ffffff" align="center" height="100%" valign="top" width="100%" style="padding: 10px 0;"><!--[if mso]>
-                        <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
-                        <tr>
-                        <td align="center" valign="top" width="660">
-                        <![endif]-->
-                
-                <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:660px;">
-                  <tr>
-                    <td align="center" valign="top" style="font-size:0; padding: 10px 0;"><!--[if mso]>
-                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
-                                    <tr>
-                                    <td align="left" valign="top" width="220">
-                                    <![endif]-->
-                      
-                      <div style="display:inline-block; margin: 0 -2px; max-width:33.33%; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                          <tr>
-                            <td dir="ltr" style="padding: 0 10px 10px 10px;"><img src="assets1.png" width="1024" alt="" style="border: 0;width: 100%;max-width: 200px;height: auto;" class="center-on-narrow"></td>
-                          </tr>
-                        </table>
-                      </div>
-                      
-                      <!--[if mso]>
-                                    </td>
-                                    <td align="left" valign="top" width="440">
-                                    <![endif]-->
-                      
-                      <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                          <tr>
-                            <td dir="ltr" style="font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 10px 10px 0; text-align: left;" class="center-on-narrow"><p><strong style="color:#111111;">Pre-made sets of tracks with a one-time license&nbsp;</strong> <br>
-                              <br>
-                              This is a convenient and cost-effective option for clients who want to use pre-made sets of tracks at their show without worrying about the legal and licensing issues that come with using copyrighted music.<br>
-                              <!-- Button : Begin -->
-                              </p>
-                              <p>&nbsp;</p>
-  <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
-    <tr> </tr>
-    </table>
-                              
-                            <!-- Button : END --></td>
-                          </tr>
-                        </table>
-                      </div>
-                      
-                      <!--[if mso]>
-                                    </td>
-                                    </tr>
-                                    </table>
-                                    <![endif]--></td>
-                  </tr>
-                </table>
-                
-                <!--[if mso]>
-                        </td>
-                        </tr>
-                        </table>
-                        <![endif]--></td>
-            </tr>
-            <tr>
-              <td dir="rtl" bgcolor="#ffffff" align="center" height="100%" valign="top" width="100%" style="padding: 10px 0;"><!--[if mso]>
-                        <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
-                        <tr>
-                        <td align="center" valign="top" width="660">
-                        <![endif]-->
-                <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:660px;">
-                  <tr>
-                    <td align="center" valign="top" style="font-size:0; padding: 10px 0;"><!--[if mso]>
-                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
-                                    <tr>
-                                    <td align="left" valign="top" width="220">
-                                    <![endif]-->
-                      <div style="display:inline-block; margin: 0 -2px; max-width:33.33%; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                          <tr>
-                            <td dir="ltr" style="padding: 0 10px 10px 10px;"><img src="assets5.png" width="1024" alt="" style="border: 0;width: 100%;max-width: 200px;height: auto;" class="center-on-narrow"></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <!--[if mso]>
-                                    </td>
-                                    <td align="left" valign="top" width="440">
-                                    <![endif]-->
-                      <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                          <tr>
-                            <td dir="ltr" style="font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 10px 10px 0; text-align: left;" class="center-on-narrow"><strong style="color:#111111;">Artist performance (Flowers 15)</strong> <br>
-                              <br>
-                              This option adds a live element to the show, which can be exciting and engaging for the audience. Our team of skilled musicians can perform a variety of music styles to match the theme of the show.
-                              <br>
-                              <!-- Button : Begin -->
-                              <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
-                                <tr> </tr>
-                              </table>
-                            <!-- Button : END --></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <!--[if mso]>
-                                    </td>
-                                    </tr>
-                                    </table>
-                                    <![endif]--></td>
-                  </tr>
-                </table>
-                <!--[if mso]>
-                        </td>
-                        </tr>
-                        </table>
-                        <![endif]--></td>
-            </tr>
-            <tr>
-              <td dir="rtl" bgcolor="#ffffff" align="center" height="100%" valign="top" width="100%" style="padding: 10px 0;"><!--[if mso]>
-                        <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
-                        <tr>
-                        <td align="center" valign="top" width="660">
-                        <![endif]-->
-                <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:660px;">
-                  <tr>
-                    <td align="center" valign="top" style="font-size:0; padding: 10px 0;"><!--[if mso]>
-                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
-                                    <tr>
-                                    <td align="left" valign="top" width="220">
-                                    <![endif]-->
-                      <div style="display:inline-block; margin: 0 -2px; max-width:33.33%; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                          <tr>
-                            <td dir="ltr" style="padding: 0 10px 10px 10px;"><img src="assets3.png" width="1028" alt="" style="border: 0;width: 100%;max-width: 200px;height: auto;" class="center-on-narrow"></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <!--[if mso]>
-                                    </td>
-                                    <td align="left" valign="top" width="440">
-                                    <![endif]-->
-                      <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                          <tr>
-                            <td dir="ltr" style="font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 10px 10px 0; text-align: left;" class="center-on-narrow"><strong style="color:#111111;">Instrumental set in the form of a playback</strong> <br>
-                              <br>
-                              This option is great for clients who want to save money on hiring live musicians or who want more control over the music played at their show. We ensure that the quality of the playback is high enough to meet the expectations of the audience and the client.
-                              <br>
-                              <!-- Button : Begin -->
-                              <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
-                                <tr> </tr>
-                              </table>
-                            <!-- Button : END --></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <!--[if mso]>
-                                    </td>
-                                    </tr>
-                                    </table>
-                                    <![endif]--></td>
-                  </tr>
-                  <tr>
-                    <td align="center" valign="top" style="font-size:0; padding: 10px 0;"><!--[if mso]>
-                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
-                                    <tr>
-                                    <td align="left" valign="top" width="220">
-                                    <![endif]-->
-                      <div style="display:inline-block; margin: 0 -2px; max-width:33.33%; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                          <tr>
-                            <td dir="ltr" style="padding: 0 10px 10px 10px;"><img src="assets4.png" width="1024" alt="" style="border: 0;width: 100%;max-width: 200px;height: auto;" class="center-on-narrow"></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <!--[if mso]>
-                                    </td>
-                                    <td align="left" valign="top" width="440">
-                                    <![endif]-->
-                      <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                          <tr>
-                            <td dir="ltr" style="font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #555555; padding: 10px 10px 0; text-align: left;" class="center-on-narrow"><strong style="color:#111111;">Turnkey creation of the style and atmosphere of the show</strong> <br>
-                              <br>
-                              This option requires a high level of creativity and skill from our music production team. We work closely with our clients to create a unique and memorable experience for the audience by creating a sound and composition that perfectly matches the style and atmosphere of the show.
-                              <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
-                                <tbody>
-                                  <tr> </tr>
-                                </tbody>
-                              </table>
-                              <!-- Button : END --></td>
-                          </tr>
-                        </table>
-                      </div>
-                      <!--[if mso]>
-                                    </td>
-                                    </tr>
-                                    </table>
-                                    <![endif]--></td>
-                  </tr>
-                </table>
-                <!--[if mso]>
-                        </td>
-                        </tr>
-                        </table>
-                        <![endif]--></td>
-            </tr>
-            <!-- Thumbnail Right, Text Left : END -->
-            
-          </table>
-<!-- Email Body : END --> 
-          
-          <!-- Email Footer : BEGIN -->          <!-- Email Footer : END --> 
-          
-          <!--[if (gte mso 9)|(IE)]>
-            </td>
-            </tr>
-            </table>
-            <![endif]--> 
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+			.service {
+			  display: flex;
+			  align-items: center;
+			  background-color: rgba(255, 255, 255, 0.5);
+			  margin: 20px;
+			  padding: 20px;
+			  border-radius: 10px;
+			  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			  position: relative;
+			}
+
+			.service img {
+			  width: 200px;
+			  height: 200px;
+			  margin-right: 20px;
+			  border-radius: 10px;
+			}
+
+			.service h2 {
+			  margin-top: 0;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  background-color: rgba(0,0,0,0.5);
+			  color: #fff;
+			  padding: 10px;
+			  border-radius: 10px 10px 0 0;
+			}
+
+			.service p {
+			  margin-bottom: 0;
+			}
+
+
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>What We Offer</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="service">
+          <img src="assets1.png" alt="Pre-made sets">
+          <h2>Pre-made sets of tracks with a one-time license</h2>
+          <p>Choose from our selection of pre-made tracks for your fashion show or walkthrough. All tracks come with a one-time license for your use.</p>
         </div>
-    </center></td>
-  </tr>
-</table>
-</body>
-</html>
+        <div class="service">
+          <img src="assets5.png" alt="Artist performance">
+          <h2>Artist performance (Flowers 15)</h2>
+          <p>Hire our talented artist Flowers 15 for a live performance at your fashion event. Flowers 15 is a crowd-pleaser and will leave your guests wanting more.</p>
+        </div>
+        <div class="service">
+          <img src="assets3.png" alt="Instrumental set">
+          <h2>Instrumental set in the form of a playback</h2>
+					<p>Let us take care of everything for your fashion event. Our turnkey service includes creating the style and atmosphere of the show, including the music, lighting, and decor. We'll work with you to create a truly unforgettable experience for your guests.</p>
+		    </div>
+		  </div>
+		</main>
+		<footer>
+		  <p>© made by Rex 2023</p>
+		</footer>

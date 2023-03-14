@@ -1,57 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini Audio Player</title>
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../res/fontawesome/css/all.css" />
-    <link rel="stylesheet" href="./main.css" />
+    <title>Audio Player</title>
+    <style>
+      /* Add CSS styling here to create a more attractive audio player */
+      #audio-player {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0px 3px 5px #ccc;
+        padding: 20px;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      #audio-player img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      #track-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #track-list li {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+      }
+
+      #track-list li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      #track-list li a {
+        color: #333;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      #track-list li a:hover {
+        color: #06c;
+        text-decoration: underline;
+      }
+
+      #progress-bar {
+        width: 100%;
+        height: 10px;
+        background-color: #ddd;
+        position: relative;
+        margin-top: 20px;
+      }
+
+      #progress-bar span {
+        display: block;
+        height: 100%;
+        background-color: #06c;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 5px;
+      }
+
+      #controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      #play-pause-btn {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      #play-pause-btn:hover {
+        transform: scale(1.1);
+      }
+
+      #play-pause-btn img {
+        width: 50px;
+        height: 50px;
+      }
+
+      #track-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      #track-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      #track-artist {
+        font-size: 16px;
+        color: #999;
+      }
+    </style>
   </head>
   <body>
-    <audio id="player" src="pecker.wav"></audio>
-		<audio id="player" src="super.wav"></audio>
-
-    <div class="player">
-      <div class="control">
-        <i class="fas fa-play" id="playbtn"></i>
+    <div id="audio-player">
+      <img src="/Users/flowers15/Desktop/music for a fashion  brands/assets1.png" alt="Album Art">
+      <div id="track-info">
+        <div id="track-title">Twitter</div>
+        <div id="track-artist">Flowers 15</div>
       </div>
-      <div class="info">
-        pecker
-        <div class="bar">
-          <div id="progress"></div>
-        </div>
-      </div>
-
-      <div id="current">0:00</div>
-    </div>
-
-		<div class="playlist">
-  <ul>
-    <li class="track" data-src="pecker.wav">pecker</li>
-    <li class="track" data-src="super.wav">super</li>
-    <li class="track" data-src="audio/track3.mp3">Track 3</li>
+      <audio id="audio" src="pecker.wav"></audio>
+      <ul id="track-list">
+        <li><a href="#" data-src="audio-file.mp3">pecker</a><span>3:45</span></li>
+        <li><a href="#" data-src="audio-file-2.mp3">Track 2</a    ><span>4:20</span></li>
+    <li><a href="#" data-src="audio-file-3.mp3">Track 3</a><span>2:55</span></li>
   </ul>
+  <div id="progress-bar">
+    <span></span>
+  </div>
+  <div id="controls">
+    <button id="play-pause-btn"><img id="play-pause-img" src="play.png" alt="Play"></button>
+  </div>
 </div>
+<script>
+  // JavaScript code for controlling the audio player
+  const audio = document.getElementById('audio');
+  const playPauseBtn = document.getElementById('play-pause-btn');
+  const playPauseImg = document.getElementById('play-pause-img');
+  const trackTitle = document.getElementById('track-title');
+  const trackArtist = document.getElementById('track-artist');
+  const trackList = document.getElementById('track-list');
+  const progressBar = document.getElementById('progress-bar');
+  const progressBarFill = progressBar.querySelector('span');
 
-<audio id="player" src="pecker.wav"></audio>
-<audio id="player2" src="super.wav"></audio>
+  let currentTrack = 0;
+  let isPlaying = false;
+  let progressInterval;
 
+  function playTrack(trackIndex) {
+    const track = trackList.children[trackIndex].querySelector('a');
+    const trackSrc = track.getAttribute('data-src');
+    const trackTitleText = track.textContent;
+    const trackArtistText = 'Artist Name'; // Change this to the actual artist name
 
-    <script src="./player.js"></script>
-		<button onclick="goBack()">Back</button>
+    audio.src = trackSrc;
+    trackTitle.textContent = trackTitleText;
+    trackArtist.textContent = trackArtistText;
+    audio.play();
+    isPlaying = true;
+    playPauseImg.src = 'pause.png';
+    startProgressInterval();
+    currentTrack = trackIndex;
+  }
 
-		<script>
-		function goBack() {
-		  window.history.back();
-		}
-		</script>
+  function togglePlayPause() {
+    if (isPlaying) {
+      audio.pause();
+      isPlaying = false;
+      playPauseImg.src = 'play.png';
+      clearInterval(progressInterval);
+    } else {
+      audio.play();
+      isPlaying = true;
+      playPauseImg.src = 'pause.png';
+      startProgressInterval();
+    }
+  }
 
+  function startProgressInterval() {
+    progressInterval = setInterval(() => {
+      const progress = audio.currentTime / audio.duration;
+      progressBarFill.style.width = `${progress * 100}%`;
+    }, 100);
+  }
 
-  </body>
+  trackList.addEventListener('click', e => {
+    if (e.target.tagName === 'A') {
+      e.preventDefault();
+      const trackIndex = Array.from(trackList.children).indexOf(e.target.parentElement);
+      playTrack(trackIndex);
+    }
+  });
+
+  playPauseBtn.addEventListener('click', togglePlayPause);
+
+  audio.addEventListener('ended', () => {
+    if (currentTrack < trackList.children.length - 1) {
+      playTrack(currentTrack + 1);
+    } else {
+      audio.currentTime = 0;
+      togglePlayPause();
+      progressBarFill.style.width = '0%';
+    }
+  });
+</script>
+</body>
 </html>
